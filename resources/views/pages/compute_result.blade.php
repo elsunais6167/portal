@@ -291,10 +291,6 @@ $(function() {
           $(".total_score_"+id_).val(total_score);
     });
 
-    $('.print_docs').on('click', () => {
-      window.print();
-    });
-
 });
 
 </script>

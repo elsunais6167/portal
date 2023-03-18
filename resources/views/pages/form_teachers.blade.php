@@ -125,7 +125,7 @@
             </div>
             @if(! $form_teachers->count() ) 
             <p class="text-center text-muted"> You have Not assigned a Class Teacher Yet ! </p>
-            @endifo
+            @endif
         </section>
     </div>
 </section>

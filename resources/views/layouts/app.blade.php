@@ -9,6 +9,7 @@
 <script>
      //== Prevent DataTables from showing error alert message  ==========////// 
      $(function(){
+      $('.print_docs').on('click', () => {  window.print();  });
           $.fn.DataTable.ext.errMode = 'throw';
           $('.datatable_').DataTable();
         });

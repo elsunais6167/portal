@@ -222,16 +222,16 @@ $school_logo = $domain."uploaded_files/school_logo/".$school->id.'/'.$school->lo
                        <hr>
 
                        <div class="col-md-3"> <!-- col -->
-                         <b> Class Teacher's remark: </b>  Satisfactory 
+                         <b> Class Teacher's remark: </b>  ______________________ 
                        </div> <!-- col -->
                
                        <hr>
                        <div class="col-md-9"> <!-- col -->  
                      
                          <b> Principal/Headmaster's Remark:</b> 
-                              Satisfactory           
+                              ________________________________________________________        
                         <br>  
-                              <img src="{{asset('/img/signature.jpg') }}" style='height:40px; width:100px;'> <br>
+                              <!--<img src="{{asset('/img/signature.jpg') }}" style='height:40px; width:100px;'> --> <br> <br> <br>
                               <em> {{ date('d/m/Y') }} </em>
                               <br> <span> <b> Principal/Headmaster's Sign/Date </b> </span>
   

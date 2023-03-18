@@ -7,13 +7,13 @@
         <div class="row mb-2">
 
           <div class="col-sm-6">
-            <h6 class="m-0 text-dark get_title_text"> student Computation </h6>
+            <h6 class="m-0 text-dark get_title_text"> Result Computation </h6>
           </div><!-- /.col -->
 
           <div class="col-sm-6 d-none d-sm-inline-block">
             <ol class="breadcrumb float-sm-right">
                <li class="breadcrumb-item"><a onclick="go_back()" href="javascript:void(0)"> <i class="fa fa-arrow-left"></i> Go back </a></li>
-              <li class="breadcrumb-item active"> student Computation </li>
+              <li class="breadcrumb-item active"> Result Computation </li>
             </ol>
           </div><!-- /.col -->
 
@@ -66,13 +66,13 @@
 
 <section class="content">
     <div class="card">
-        <div class="card-header lead"> {{ request()->subject }} Computation </div>
+        <div class="card-header lead"> {{ request()->subject }} </div>
 
     <section class="card-body">
       <p class="text-uppercase "> Term: <span class="term_">{{ request()->term }} </span> </p>
       <p class="text-uppercase "> Session: <span class="sessions_">{{ request()->sessions }} </span> </p>
-      <p class="text-uppercase "> Class: <span class="classes_">{{ request()->classes }} </span> </p>
-      <p class="text-uppercase "> Arm: <span class="arms_">{{ request()->arms }} </span> </p>
+      <p class="text-uppercase "> Class: <span class="classes_">{{ request()->classes }} </span> <span class="arms_">{{ request()->arms }} </span> </p>
+      <p> <button class="btn btn-outline-info print_docs btn-sm no-print">Print sheet</button></p>
       <hr>
 
       <div class="table-responsive">
@@ -83,8 +83,8 @@
               <th> 1st C.A </th>
               <th> 2nd C.A </th>
               <th> Exam </th>
-              <th> Total </th>
-              <th> Action </th>
+              <th class="no-print"> Total </th>
+              <th class="no-print"> Action </th>
             </tr>
             </thead>
             <tbody>
@@ -103,8 +103,8 @@
                <td> <input name="field1" required type="number" step="any" class="form-control input_  form_width ca1_{{$student->id}}" id="{{$student->id}}" placeholder="1st C.A"> </td>
                <td> <input name="field2" type="number" step="any" class="form-control  input_  form_width ca2_{{$student->id}}" id="{{$student->id}}" placeholder="2nd C.A">  </td>
                <td> <input name="exam_score" type="number" required step="any" class="form-control input_ form_width exam_{{$student->id}}" id="{{$student->id}}" placeholder="Exam"> </td>
-               <td> <input name="total_score" type="number" required step="any" readonly class="form-control input_ form_width total_score_{{$student->id}}" id="{{$student->id}}" placeholder="Total">  </td>
-               <td> 
+               <td class="no-print"> <input name="total_score" type="number" required step="any" readonly class="form-control input_ form_width total_score_{{$student->id}}" id="{{$student->id}}" placeholder="Total">  </td>
+               <td class="no-print"> 
                    <i class="fa hide fa-check-circle text-success" id="success_{{$student->id}}"></i>
                    <i class="fa hide fa-close text-danger" id="failed_{{$student->id}}"></i>
                    <i class="fa hide fa-spin fa-spinner text-muted" id="processing_{{$student->id}}"></i>
@@ -118,7 +118,7 @@
       </div>
     </section>
 
-    <section class="card-footer">
+    <section class="card-footer no-print">
      <center>
       <button type="button" data-toggle="modal" data-target="#edit_subject_modal" class="btn-warning btn"> Edit Result </button> &nbsp;
       <a href="{{ route('class_broadsheet',[
